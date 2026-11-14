@@ -1,6 +1,7 @@
 {
   "name": "blog-api",
   "version": "1.0.0",
+  "type": "module",
   "description": "A full-stack blogging platform with a REST API for managing posts, comments, users, and authentication.",
   "main": "index.js",
   "scripts": {
