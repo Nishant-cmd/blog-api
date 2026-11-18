@@ -1,0 +1,46 @@
+.admin-shell { min-height: 100vh; background: #f7f6f3; }
+.topbar { height: 68px; padding: 0 30px; display: flex; align-items: center; justify-content: space-between; background: #fff; border-bottom: 1px solid #e8e6e1; }
+.brand { color: #292a24; font: 700 1.15rem Georgia, serif; text-decoration: none; letter-spacing: -.04em; }
+.brand > span { color: #bb744c; }.brand small { margin-left: 9px; color: #929188; font: 500 .75rem system-ui, sans-serif; letter-spacing: .03em; }
+.top-actions, .heading-actions { display: flex; align-items: center; gap: 14px; }
+.muted { color: #818178; font-size: .85rem; }
+.workspace { width: min(100%, 1440px); margin: auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: calc(100vh - 68px); }
+.sidebar { background: #fff; border-right: 1px solid #e8e6e1; padding: 27px 20px; }
+.sidebar-title, .editor-heading, .moderation-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.sidebar-title h2 { margin: 2px 0 0; color: #292a24; font: 400 1.55rem Georgia, serif; }
+.eyebrow { margin: 0 0 7px; color: #9b725b; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+.button { min-height: 37px; padding: 0 13px; border: 1px solid #d9d7d0; border-radius: 5px; background: #fff; color: #46473f; font-size: .82rem; cursor: pointer; white-space: nowrap; }
+.button:hover { border-color: #aaa69d; background: #faf9f6; }.button:disabled { opacity: .6; cursor: wait; }
+.button.primary { border-color: #35362f; background: #35362f; color: #fff; }.button.primary:hover { background: #4b4c43; }
+.button.quiet { border-color: transparent; }.button.danger { color: #9d4a3a; border-color: #e7cdc8; }
+.button.full { width: 100%; margin-top: 7px; }
+.filter { display: block; margin: 24px 0 14px; }
+.filter input { width: 100%; height: 38px; padding: 0 11px; border: 1px solid #e1dfd8; border-radius: 5px; background: #fbfaf8; font-size: .82rem; }
+.post-list { display: grid; }
+.post-row { display: grid; gap: 8px; padding: 13px 11px; border: 0; border-top: 1px solid #eeece7; background: transparent; text-align: left; cursor: pointer; }
+.post-row:hover, .post-row.active { background: #f6f4ef; }.post-row-title { color: #373830; font: 1rem/1.35 Georgia, serif; }
+.post-row-meta { display: flex; align-items: center; gap: 6px; color: #85857c; font-size: .71rem; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #c69d58; }.dot.published { background: #668c69; }
+.sidebar-empty { padding: 14px 7px; line-height: 1.6; }
+.editor { min-width: 0; width: min(100%, 900px); padding: 42px clamp(22px, 6vw, 80px) 70px; }
+.editor-heading { align-items: end; margin-bottom: 25px; }.editor-heading h1 { margin: 0; color: #292a24; font: 400 2rem Georgia, serif; letter-spacing: -.03em; }
+.post-form { display: grid; gap: 19px; }
+.post-form label, .login-card label { display: grid; gap: 8px; color: #5f6058; font-size: .78rem; font-weight: 600; }
+.post-form input, .post-form textarea, .post-form select, .login-card input { width: 100%; border: 1px solid #dedcd5; border-radius: 5px; padding: 11px 12px; background: #fff; color: #34352e; font-size: .9rem; font-weight: 400; }
+.post-form textarea { min-height: 290px; resize: vertical; line-height: 1.65; }
+.post-form input:focus, .post-form textarea:focus, .post-form select:focus, .login-card input:focus, .filter input:focus { outline: 2px solid #b98a69; outline-offset: 1px; border-color: transparent; }
+.form-footer { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding-top: 2px; }
+.form-footer .muted { font-size: .78rem; }
+.moderation { margin-top: 55px; border-top: 1px solid #dedcd5; padding-top: 23px; }
+.moderation-heading { justify-content: start; margin-bottom: 8px; }.moderation-heading h2 { margin: 0; color: #34352e; font: 400 1.35rem Georgia, serif; }.moderation-heading span { color: #85857c; font-size: .8rem; }
+.moderation-row { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-top: 1px solid #e8e6e1; }
+.comment-copy { min-width: 0; }.comment-copy strong { color: #42433b; font-size: .84rem; }.comment-copy time { margin-left: 10px; color: #929188; font-size: .69rem; }.comment-copy p { margin: 7px 0 0; color: #65665e; font-size: .87rem; line-height: 1.55; white-space: pre-wrap; }
+.comment-actions { display: flex; align-items: start; gap: 12px; }.text-action { border: 0; padding: 2px 0; background: transparent; color: #746d60; font-size: .75rem; cursor: pointer; }.danger-text { color: #a44c40; }
+.empty-comments { padding: 15px 0; }
+.alert, .success { margin: 0 0 18px; padding: 11px 13px; border-radius: 5px; font-size: .83rem; }.alert { color: #8e3d31; background: #f8e9e5; }.success { color: #386843; background: #e9f3e9; }
+.login-page { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #f7f6f3; }
+.login-card { width: min(100%, 390px); display: grid; gap: 17px; padding: 34px; border: 1px solid #e8e6e1; border-radius: 8px; background: #fff; box-shadow: 0 12px 40px #312c2010; }
+.login-card h1 { margin: 0; color: #292a24; font: 400 2rem Georgia, serif; }.login-card > .muted { margin-top: -12px; }.login-card input { margin-top: 1px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 800px) { .workspace { grid-template-columns: 1fr; }.sidebar { border-right: 0; border-bottom: 1px solid #e8e6e1; padding: 19px 20px; }.post-list { display: flex; overflow-x: auto; gap: 8px; }.post-row { min-width: 210px; border: 1px solid #eeece7; border-radius: 5px; }.editor { padding-top: 30px; } }
+@media (max-width: 520px) { .topbar { padding: 0 16px; }.top-actions > .muted { display: none; }.editor-heading { align-items: start; flex-direction: column; }.heading-actions { width: 100%; }.form-footer { align-items: start; flex-direction: column; }.form-footer .button { width: 100%; }.moderation-row { flex-direction: column; }.comment-actions { justify-content: end; }.login-card { padding: 26px 21px; } }
