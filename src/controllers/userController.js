@@ -43,7 +43,7 @@ export const getPostsByUser = async (req, res) => {
   try {
     const authorId = parseInt(req.params.id);
     const posts = await db.getPostsByUser(authorId);
-    res.status(200).json({ data: posts });
+    res.status(200).json({ data: posts.filter((post) => post.published) });
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch posts for user" });
   }

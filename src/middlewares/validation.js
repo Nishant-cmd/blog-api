@@ -91,10 +91,6 @@ export const validateCreatePost = [
 
   body("content").trim().notEmpty().withMessage("Content is required"),
 
-  body("authorId")
-    .isInt({ min: 1 })
-    .withMessage("authorId must be a positive integer"),
-
   handleValidationErrors,
 ];
 
@@ -139,10 +135,6 @@ export const validateCreateComment = [
 
   body("content").trim().notEmpty().withMessage("Comment content is required"),
 
-  body("authorId")
-    .isInt({ min: 1 })
-    .withMessage("authorId must be a positive integer"),
-
   handleValidationErrors,
 ];
 
@@ -150,5 +142,16 @@ export const validateCommentId = [
   param("id")
     .isInt({ min: 1 })
     .withMessage("Comment ID must be a positive integer"),
+  handleValidationErrors,
+];
+
+export const validateCommentRoute = [
+  param("postId").isInt({ min: 1 }).withMessage("Post ID must be a positive integer"),
+  param("commentId").isInt({ min: 1 }).withMessage("Comment ID must be a positive integer"),
+  handleValidationErrors,
+];
+
+export const validateUpdateComment = [
+  body("content").trim().notEmpty().withMessage("Comment content is required"),
   handleValidationErrors,
 ];

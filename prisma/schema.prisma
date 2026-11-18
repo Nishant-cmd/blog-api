@@ -12,6 +12,13 @@ enum Role {
   ADMIN
 }
 
+model Session {
+  id      String   @id
+  sid     String   @unique
+  data    String   @db.Text
+  expires DateTime
+}
+
 model User {
   id       Int    @id @default(autoincrement())
   name     String

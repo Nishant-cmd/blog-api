@@ -6,37 +6,68 @@ async function createPost(title, slug, content, authorId) {
       title,
       slug,
       content,
-      author: {
-        connect: {
-          id: authorId,
-        },
-      },
+      author: { connect: { id: authorId } },
     },
   });
 }
+
 async function getPublishedPosts() {
   return await prisma.post.findMany({
-    where: {
-      published: true,
+    where: { published: true },
+    orderBy: { publishedAt: 'desc' },
+    include: {
+      author: { select: { id: true, name: true, username: true } },
+      _count: { select: { comments: true } },
     },
-    orderBy: {
-      publishedAt: 'desc',
-    },
-    take: 10,
   });
 }
+
+async function getAllPosts() {
+  return await prisma.post.findMany({
+    orderBy: { createdAt: 'desc' },
+    include: {
+      author: { select: { id: true, name: true, username: true } },
+      _count: { select: { comments: true } },
+    },
+  });
+}
+
 async function getPostById(postId) {
   return await prisma.post.findUnique({
-    where: {
-      id: postId,
+    where: { id: postId },
+    include: {
+      author: { select: { id: true, name: true, username: true } },
     },
   });
 }
+
 async function getPostBySlug(slug) {
-  return await prisma.post.findUnique({
-    where: {
-      slug,
-    },
+  return await prisma.post.findUnique({ where: { slug } });
+}
+
+async function updatePost(postId, data) {
+  if (data.published === true) {
+    data.publishedAt = data.publishedAt ?? new Date();
+  }
+  if (data.published === false) {
+    data.publishedAt = null;
+  }
+  return await prisma.post.update({
+    where: { id: postId },
+    data,
   });
 }
-export { createPost, getPublishedPosts, getPostById, getPostBySlug };
+
+async function deletePost(postId) {
+  return await prisma.post.delete({ where: { id: postId } });
+}
+
+export {
+  createPost,
+  getPublishedPosts,
+  getAllPosts,
+  getPostById,
+  getPostBySlug,
+  updatePost,
+  deletePost,
+};
