@@ -4,6 +4,28 @@ A full-stack blogging platform built with React, Express, and PostgreSQL. It all
 
 The platform includes a public-facing blog website and a separate writing dashboard. It supports JWT-based authentication, role-based access control, post management, and comment moderation.
 
+## Demo
+
+The screenshots below show the public blog, the authoring dashboard, and the post discussion experience.
+
+### Public blog
+
+Readers can browse published stories, see the author and comment count, and use the navigation to write or manage their account.
+
+![Public blog homepage with published stories and account navigation](docs/screenshots/blog-home.png)
+
+### Writing dashboard
+
+Signed-in authors can create and edit posts, save drafts, publish posts, and delete their own work from the dashboard.
+
+![Writing dashboard showing a draft post editor and publishing controls](docs/screenshots/blog-editor.png)
+
+### Story and comments
+
+Readers can open a story and view its comments. Signed-in users can add comments, while post owners can moderate comments on their own posts.
+
+![Published story page with its comment section](docs/screenshots/blog-comments.png)
+
 ## Project layout
 
 | Path | Purpose |
